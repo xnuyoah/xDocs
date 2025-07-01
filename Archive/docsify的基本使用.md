@@ -341,7 +341,7 @@ search: {
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
 ```
 
-#### l.分页
+#### k.分页
 
 ```html
 
@@ -357,6 +357,58 @@ pagination: {
 
 
 <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+```
+
+#### l.在`Github`上编辑
+
+```html
+<!-- 在 Github 上编辑 -->
+<script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+
+<script>
+// 在 Github 上编辑
+window.$docsify = {
+  plugins: [
+    EditOnGithubPlugin.create("https://github.com/xnuyoah/xDocs/tree/main/",
+    null,
+    '修正此页'
+    )
+  ],
+};
+</script>
+```
+
+#### m.`mermad` 绘图
+
+```html
+<script>
+window.$docsify = {
+  mermaidConfig: {
+    querySelector: ".mermaid"
+  }
+};
+</script>
+
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+mermaid.initialize({
+  startOnLoad: true,
+  securityLevel: 'loose',
+  logLevel: 1
+});
+window.mermaid = mermaid;
+</script>
+<script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+```
+
+#### o.暗黑模式切换
+
+```html
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" title="docsify-darklight-theme" type="text/css" />
+
+<!-- 暗黑模式切换 -->
+<script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js" type="text/javascript"></script>
 ```
 
 ### 5.参考配置项
@@ -379,6 +431,8 @@ pagination: {
   
   <body>
     <div id="app">加载中...</div>
+    <!-- 在 Github 上编辑 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
     <script>window.$docsify = {
         name: "xeliauk's Docs",
         repo: 'https://github.com/xnuyoah/xDocs',
@@ -411,9 +465,30 @@ pagination: {
           crossChapter: true,
           crossChapterText: true,
         },
+        // 在 Github 上编辑
+        plugins: [
+            EditOnGithubPlugin.create("https://github.com/xnuyoah/xDocs/tree/main/",
+            null,
+            '修正此页'
+          )
+        ],
+        mermaidConfig: {
+          querySelector: ".mermaid"
+        },
       }</script>
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <!-- mermaid 绘图 -->
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({
+        startOnLoad: true,
+        securityLevel: 'loose',
+        logLevel: 1
+      });
+      window.mermaid = mermaid;
+    </script>
+    <script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
     <!-- 中文英文之间自动添加空格 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
     <!-- 搜索 -->
@@ -430,7 +505,7 @@ pagination: {
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
     <!-- 分页 -->
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-    <!-- 黑/白模式切换 -->
+    <!-- 暗黑模式切换 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js" type="text/javascript"></script>
   </body>
 

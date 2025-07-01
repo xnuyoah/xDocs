@@ -10,6 +10,9 @@
   - [Git Commit约定规范](Git/git-commit约定规范.md)
   - [Git安装配置](Git/git安装配置.md)
 
+- LangChain
+  - [1.认识Langchain](LangChain/1.认识langchain.md)
+
 - Linux
   - [Linux常用命令](Linux/linux常用命令.md)
   - [Linux常用工具安装](Linux/linux常用工具安装.md)
